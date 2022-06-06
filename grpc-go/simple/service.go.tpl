@@ -10,7 +10,7 @@ import (
 
 // {{ .ServiceNameCamelCase }}
 type {{ .ServiceNameCamelCase }} struct{
-{{- range .Services }}
+{{- range .RpcServices }}
 {{- $ServiceName := .Name }}
 {{- $ServiceName := $ServiceName }}
     pb.Unimplemented{{ $ServiceName }}Server
@@ -24,8 +24,8 @@ func New() *{{ .ServiceNameCamelCase }} {
 	return svr
 }
 
-{{- range .Services }}
-  {{- range .RPC}}
+{{- range .RpcServices }}
+  {{- range .Methods}}
 
 // {{ .Name }}
 func (s *{{ .ServiceCamelCase }}) {{ .Name }}(ctx context.Context, req *pb.{{ .RequestType }}) (rsp *pb.{{.ResponseType }},err error) {
