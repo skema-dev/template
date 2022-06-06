@@ -17,7 +17,7 @@ type {{ .ServiceNameCamelCase }} struct{
 {{- end}}
 }
 
-func New() *{{ .ServiceNameCamelCase }} {
+func NewService() *{{ .ServiceNameCamelCase }} {
 	svr := &{{ .ServiceNameCamelCase }}{
 		// init custom fileds
 	}
