@@ -13,12 +13,12 @@ func main() {
 	{{- range .RpcServices }}
 	pb.Register{{ .Name }}Server(srv, srvImp)
 	{{- end}}
-    {{ if .HttpEnabled }}
+	{{ if .HttpEnabled }}
 	ctx, mux, conn := srv.GetGatewayInfo()
 	pb.Register{{ .ServiceNameCamelCase }}HandlerClient(ctx, mux, pb.New{{ .ServiceNameCamelCase }}Client(conn))
-    {{end}}
-    
-    logging.Infof("Serving gRPC start...")
+	{{end}}
+
+	logging.Infof("Serving gRPC start...")
 	if err := srv.Serve(); err != nil {
 		logging.Fatalf("Serve error %v", err.Error())
 	}
