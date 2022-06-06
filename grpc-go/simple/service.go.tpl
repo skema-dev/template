@@ -1,5 +1,5 @@
 // Package {{ .ServiceName }} provides {{ .ServiceName }} logic implement
-package service
+package main
 
 import (
 	"context"
