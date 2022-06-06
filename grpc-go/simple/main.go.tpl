@@ -15,7 +15,9 @@ func main() {
 	{{- end}}
 	{{ if .HttpEnabled }}
 	ctx, mux, conn := srv.GetGatewayInfo()
-	pb.Register{{ .ServiceNameCamelCase }}HandlerClient(ctx, mux, pb.New{{ .ServiceNameCamelCase }}Client(conn))
+	{{- range .RpcServices }}
+	pb.Register{{ .Name }}HandlerClient(ctx, mux, pb.New{{ .Name }}Client(conn))
+	{{- end}}
 	{{end}}
 
 	logging.Infof("Serving gRPC start...")
