@@ -10,6 +10,11 @@ import (
 func main() {
 	srv := grpcmux.NewServer()
 	srvImp := service.New()
+
+{{- range .RpcServices }}
+	pb.Register{{ .Name }}Server(srv, srvImp)
+{{- end}}
+
 	pb.Register{{ .ServiceNameCamelCase }}Server(srv, srvImp)
 
     {{ if .HttpEnabled }}
