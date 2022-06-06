@@ -28,7 +28,7 @@ func New() *{{ .ServiceNameCamelCase }} {
   {{- range .Methods}}
 
 // {{ .Name }}
-func (s *{{ .ServiceCamelCase }}) {{ .Name }}(ctx context.Context, req *pb.{{ .RequestType }}) (rsp *pb.{{.ResponseType }},err error) {
+func (s *{{ $.ServiceNameCamelCase }}) {{ .Name }}(ctx context.Context, req *pb.{{ .RequestType }}) (rsp *pb.{{.ResponseType }},err error) {
 	// implement business logic here ...
 	// ...
 
