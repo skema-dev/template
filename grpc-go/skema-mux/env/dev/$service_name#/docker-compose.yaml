@@ -1,0 +1,9 @@
+version: "2"
+services:
+  mytestservice:
+    image: {{.ServiceNameLower}}
+    build: ./Dockerfile
+    ports:
+      - "19991:9991"
+      - "19992:9992"
+
