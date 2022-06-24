@@ -7,14 +7,14 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: {{ .Value.MysqlPassword }}
-      MYSQL_DATABASE: {{ .OriginalServiceNameLower }}
+      MYSQL_DATABASE: {{ .ProtocolServiceNameLower }}
 
   hello3service:
-    image: dev/{{.ServiceNameLower}}
+    image: dev/{{.ProtocolServiceNameLower}}
     depends_on:
       mysql-server:
         condition: service_started
     ports:
-      - "19991:9991"
-      - "19992:9992"
+      - "{{.Value.GrpcPort}}:{{.Value.GrpcPort}}"
+      - "{{.Value.HttpPort}}:{{.Value.HttpPort}}"
 

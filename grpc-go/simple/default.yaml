@@ -1,0 +1,3 @@
+values:
+  - grpc_port: "9991"
+  - http_port: "9992"

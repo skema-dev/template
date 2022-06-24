@@ -2,7 +2,7 @@ package main
 
 import (
 	pb "{{ .GoPackageAddress }}"
-	"{{.GoModule}}/cmd/{{.ServiceNameLower}}/service"
+	"{{.GoModule}}/cmd/{{.ProtocolServiceNameLower}}/service"
 	"github.com/skema-dev/skema-go/grpcmux"
 	"github.com/skema-dev/skema-go/logging"
 )

@@ -5,7 +5,7 @@ database:
         password: {{ .Value.MysqlPassword }}
         host: {{.Value.MysqlServerName}}
         port: 3306
-        dbname: {{ .OriginalServiceNameLower }}
+        dbname: {{ .ProtocolServiceNameLower }}
         charset: utf8mb4
         automigrate: true
         retry: 3

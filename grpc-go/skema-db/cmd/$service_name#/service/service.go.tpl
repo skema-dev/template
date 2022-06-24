@@ -7,7 +7,7 @@ import (
 	"github.com/skema-dev/skema-go/data"
 	"github.com/skema-dev/skema-go/logging"
 	
-	"{{.GoModule}}/internal/{{.ServiceNameLower}}/model"
+	"{{.GoModule}}/internal/{{.ProtocolServiceNameLower}}/model"
 
 	pb "{{ .GoPackageAddress }}"
 )

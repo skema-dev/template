@@ -15,7 +15,7 @@ spec:
         app: {{.ServiceNameLower}}
     spec:
       containers:
-        - name: {{.ServiceNameLower}}
+        - name: {{.ProtocolServiceNameLower}}
           image: docker.io/dev/{{.ServiceNameLower}}:latest
           imagePullPolicy: Never  # or IfNotPresent
           ports:
