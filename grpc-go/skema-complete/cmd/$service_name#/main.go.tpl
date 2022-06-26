@@ -22,6 +22,7 @@ func main() {
 	{{- range .RpcServices }}
 	pb.Register{{ .Name }}HandlerClient(ctx, mux, pb.New{{ .Name }}Client(conn))
 	{{- end}}
+	srv.EnableSwagger({{ .ProtocolServiceNameLower }}, "./config/swagger.json")
 	{{end}}
 
 	logging.Infof("Serving gRPC start...")
