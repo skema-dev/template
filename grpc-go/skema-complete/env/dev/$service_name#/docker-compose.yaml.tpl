@@ -12,7 +12,7 @@ services:
   hello3service:
     image: dev/{{.ProtocolServiceNameLower}}
     depends_on:
-      mysql-server:
+      {{.Value.MysqlServerName}}:
         condition: service_started
     ports:
       - "{{.Value.GrpcPort}}:{{.Value.GrpcPort}}"

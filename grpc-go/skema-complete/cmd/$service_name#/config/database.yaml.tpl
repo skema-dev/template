@@ -8,7 +8,7 @@ database:
         dbname: {{ .ProtocolServiceNameLower }}
         charset: utf8mb4
         automigrate: true
-        retry: 3
+        retry: 100
         models:
 {{- range .DataModels }}
         - {{ .ModelNameCamelCase }}:
