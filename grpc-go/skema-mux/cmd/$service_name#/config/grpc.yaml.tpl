@@ -6,7 +6,7 @@ http:
     # path: "/test1/"
     path: "/"  # this is the routing prefix if you need. You can force to append an extra path before all standard URLs
   swagger:
-    path: {{ .ProtocolServiceNameLower }}
+    path: /{{ .ProtocolServiceNameLower }}/swagger
     filepath: "./config/swagger.json"    
 {{ end }}
 
